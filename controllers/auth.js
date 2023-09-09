@@ -24,9 +24,6 @@ export const register = (req, res) => {
             if (err) return req.status(500).json(err)
 
             return res.status(200).json("User has been created succesfully.")
-
-
-
         })
     })
 
@@ -53,7 +50,11 @@ export const login = (req, res) => {
 
 
 export const logout = (req, res) => {
+    res.clearCookie("accesToken", {
+        secure: true,
+        sameSite: "none", // Corrección aquí
 
-}
+    }).status(200).json("User has been logged out.");
+};
 
 

@@ -12,9 +12,9 @@ const app = express()
 const port = 8080
 
 //midelwares
-app.use(express.json())
-app.use(cors())
-app.use(cookieParser())
+app.use(express.json());
+app.use(cors());
+app.use(cookieParser());
 
 
 
@@ -25,5 +25,5 @@ app.use("/api/likes", likeRoutes)
 app.use("/api/auth", authRoutes)
 
 app.listen(port, () => {
-    console.log("¡api working")
+    console.log("¡api working");
 })
